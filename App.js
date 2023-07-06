@@ -60,25 +60,25 @@ export default function App(){
     };
 
     // modal
-    /*
     const onHandlerModal = (item) => {
       setIsVisible(true);
       setSelectedTask(item);
     };
-    */
+    
 
     // RENDERING
     const renderItem = ({ item }) => {
-      <TaskItem 
+      return(<TaskItem 
         item={item}
-        //onPressItem={onHandlerModal} 
-      />
+        onPressItem={onHandlerModal} 
+      />)
     };
 
 
     return(
 <>
     <SafeAreaView style={styles.SafeArea}>
+
         <View style={styles.Container}>
             <InputTask
                 borderColor={borderColor}
@@ -88,16 +88,37 @@ export default function App(){
                 onHandlerCreateTask={onHandlerCreateTask}
                 task={task}
             />
-            <FlatList
-              data={tasks}
-              renderItem={renderItem}
-              //style={styles.listContainer}
-              //convtentContainerStyle={styles.list}
-              alwaysBounceVertical={false}
-              keyExtractor={(item) => item.id}
-            />
+            <View style={styles.flatListContainer}>
+              
+              <FlatList
+                data={tasks}
+                renderItem={renderItem}
+                //style={styles.listContainer}
+                //convtentContainerStyle={styles.list}
+                alwaysBounceVertical={false}
+                keyExtractor={(item) => item.id}
+              />
+            </View>
 
         </View>
+
+        <Modal visible={isVisible} animationType="slide">
+          <View>
+            <Text>Task Detail</Text>
+            <View>
+              <Text>Are you sure to delete this item?</Text>
+
+            </View>
+
+            <View>
+              <Button title="Cancel" color="#424D9E" onPress={() => setIsVisible(false)} />
+              <Button title="Delete" color="red" onPress={() => onHandleDeleteTask(selectedTask?.id)} />
+            </View>
+          
+          </View>
+          
+        </Modal>
+
 
     </SafeAreaView>
     

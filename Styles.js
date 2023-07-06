@@ -13,4 +13,8 @@ export const styles = StyleSheet.create({
         padding: 10,
         paddingTop: StatusBar.currentHeight + 15,
     },
+    flatListContainer:{
+        flex:1,
+        padding:10,
+    }
 })

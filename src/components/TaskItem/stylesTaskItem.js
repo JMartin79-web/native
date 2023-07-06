@@ -6,15 +6,18 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: color.darkcian,
-        padding: 5,
+        backgroundColor: color.white,
+        borderWidth:3,
+        borderColor: color.olivine,
+        paddingVertical:15,
+        paddingHorizontal:15,
+        borderRadius:15,
+        marginBottom: 15,
         
-        marginBottom: 5,
-        text:{
-            fontSize: 15,
-            fontWeight: "bold",
-            color: color.white
-        },
-        includeFontPadding:{}
-    }
+    },
+    text:{
+        fontSize: 20,
+        fontWeight: "bold",
+        color: color.olivine
+    },
 })

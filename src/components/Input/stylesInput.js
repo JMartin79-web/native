@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal:15,
         borderRadius:15,
         marginRight: 10,
-
+        fontWeight: "bold",
     },
     InputButton:{
         flex: 1,

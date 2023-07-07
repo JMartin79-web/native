@@ -21,7 +21,7 @@ const InputTask = ({
                 cursorColor={color.coral}
                 onFocus={onHandleFocus}
                 onBlur={onHandleBlur}
-                placeholderTextColor= {color.platinum}
+                placeholderTextColor= {color.green50}
                 onChangeText={onHandlerChangeText}
             />
             <Button style={styles.InputButton}

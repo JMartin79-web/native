@@ -16,5 +16,30 @@ export const styles = StyleSheet.create({
     flatListContainer:{
         flex:1,
         padding:10,
-    }
+    },
+
+    modalContainer:{
+        justifyContent: "center",
+        alignItems: "center",
+        flex: 1,
+        backgroundColor: color.white
+    },
+    modalTitle:{
+        fontSize: 20,
+        fontWeight: "bold",
+        
+    },
+
+    modalViewText:{
+        padding: 10,
+
+    },
+    modalText:{},
+
+    modalViewButtons:{
+        padding: 10,
+        flexDirection: "row",
+        gap: 5,
+    },
+    modalButton:{}
 })

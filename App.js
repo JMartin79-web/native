@@ -93,8 +93,6 @@ export default function App(){
               <FlatList
                 data={tasks}
                 renderItem={renderItem}
-                //style={styles.listContainer}
-                //convtentContainerStyle={styles.list}
                 alwaysBounceVertical={false}
                 keyExtractor={(item) => item.id}
               />
@@ -103,16 +101,26 @@ export default function App(){
         </View>
 
         <Modal visible={isVisible} animationType="slide">
-          <View>
-            <Text>Task Detail</Text>
-            <View>
-              <Text>Are you sure to delete this item?</Text>
+          <View style={styles.modalContainer}>
+            <Text style={styles.modalTitle}> Task Detail</Text>
+            <View style={styles.modalViewText}>
+              <Text style={styles.modalText}>Are you sure to delete this item?</Text>
 
             </View>
 
-            <View>
-              <Button title="Cancel" color="#424D9E" onPress={() => setIsVisible(false)} />
-              <Button title="Delete" color="red" onPress={() => onHandleDeleteTask(selectedTask?.id)} />
+            <View style={styles.modalViewButtons}>
+              <Button
+                style={styles.modalButton}
+                title="Cancel"
+                color={color.green}
+                onPress={() => setIsVisible(false)} 
+              />
+              <Button
+                title="Delete"
+                style={styles.modalButton}
+                color={color.claret}
+                onPress={() => onHandleDeleteTask(selectedTask?.id)}
+              />
             </View>
           
           </View>

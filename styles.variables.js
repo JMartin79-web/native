@@ -9,6 +9,7 @@ export const color = {
     claret: "#990D35",
 
     green: "#828C51",
+    green50: "rgba(130, 140, 81, 0.6)",
     lightgreen: "#B9F18C",
     olivine: "#9CB380",
     vanilla: "#D4E09B",

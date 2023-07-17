@@ -1,7 +1,8 @@
 import { Button, TextInput, View, TouchableOpacity } from "react-native"
 
 import { styles } from "./stylesInput.js"
-import { color } from "../../../styles.variables.js"
+import { color } from "../../themes/colors/themes.colors.js"
+
 const InputTask = ({
     task,
     borderColor,
@@ -9,13 +10,14 @@ const InputTask = ({
     onHandleBlur,
     onHandlerChangeText,
     onHandlerCreateTask,
+    placeHolder
 }) => {
     return(
         <View style={styles.InputContainer}>
             <TextInput style={[styles.InputTask, {borderColor}]}
                 value={task}
                 autoCorrect={false}
-                placeholder="Add new task"
+                placeholder={placeHolder}
                 autoCapitalize="none"
 
                 cursorColor={color.coral}

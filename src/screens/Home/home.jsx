@@ -17,7 +17,7 @@ import salado from "../../../assets/img/Categories/salado.jpg"
 import agridulce from "../../../assets/img/Categories/agridulce.jpg"
 
 // Data
-import CATEGORIES from "../../components/data/categories"
+import CATEGORIES from "../../components/data/categories.json"
 
 export default function Home() {
 
@@ -64,7 +64,7 @@ export default function Home() {
           style={styles.categoriesContainer}
           contentContainerStyle={styles.category}
           renderItem={({ item }) => 
-          <Categories title={item.name} imagen={destacada} />}
+          <Categories title={item.name} imagen={item.source} />}
           showsVerticalScrollIndicator={false}
         />
 

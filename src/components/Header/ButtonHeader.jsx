@@ -6,14 +6,18 @@ import { styles } from './styles.buttonheader'
 export function ButtonHeader({
     content,
     page,
-    onPress
+    onPress,
+    name,
+    icon
 }) {
   return (
         <TouchableOpacity
         style={page==content ?styles.btnHeaderFocus :styles.btnHeader}
         onPress={onPress}
+        name={name}
+        content={content}
         >
-            <Text style> {content} </Text>
+            {icon}
         </TouchableOpacity>
     
 

@@ -4,11 +4,12 @@ import { color } from "../../themes/colors/themes.colors";
 export const styles = StyleSheet.create({
     container:{
         zIndex: 10,
-        width: "100%",
         height: 100,
-        
+        flex: 1,
         position: "absolute",
         bottom: 0,
+        right: 0,
+        left: 0
     },
     headerBackground:{
         zIndex: 11,

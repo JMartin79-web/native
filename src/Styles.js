@@ -4,5 +4,6 @@ export const styles = StyleSheet.create({
     SafeArea:{
         flex:1,
         paddingTop: StatusBar.currentHeight + 15,
+        paddingHorizontal: 15,
     },
 })

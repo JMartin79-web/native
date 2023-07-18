@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, FlatList } from 'react-native'
 
 // Estilos
 import { styles } from './stylesHome'
@@ -16,10 +16,14 @@ import dulce from "../../../assets/img/Categories/dulce.jpg"
 import salado from "../../../assets/img/Categories/salado.jpg"
 import agridulce from "../../../assets/img/Categories/agridulce.jpg"
 
+// Data
+import CATEGORIES from "../../components/data/categories"
+
 export default function Home() {
 
     const [search, setSearch] = useState("")
     const [borderBottomColor, setBorderBottomColor] = useState(color.darkGrey);
+
     // Funciones para manejar el input
 
     // Manage text in the input
@@ -53,13 +57,38 @@ export default function Home() {
 
         <Text style={styles.title}>Categorías</Text>
 
-        <View style={styles.categoriesContainer}>
-            <Categories title="Destacados semanal" source={destacada} />
+        
+        <FlatList
+          data={CATEGORIES}
+          keyExtractor={(item) => item.id}
+          style={styles.categoriesContainer}
+          contentContainerStyle={styles.category}
+          renderItem={({ item }) => 
+          <Categories title={item.name} imagen={destacada} />}
+          showsVerticalScrollIndicator={false}
+        />
+
+    </View>
+  )
+}
+
+/*
+CATEGORIAS EN VIEW
+<View style={styles.categoriesContainer}>
+            <Categories title="Destacados " source={destacada} />
             <Categories title="Salado" source={salado} />
             <Categories title="Dulce" source={dulce} />
             <Categories title="Agridulce" source={agridulce} />
         </View>
 
-    </View>
-  )
-}
+
+        <FlatList
+          data={CATEGORIES}
+          style={styles.categoriesContainer}
+          contentContainerStyle={styles.category}
+          renderItem={({ item }) => {
+          <Categories title={item.name} source={item.backgroundImage} />}}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+        />
+*/

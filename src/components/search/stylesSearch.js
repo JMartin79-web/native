@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 5,
         //borderBottomColor: color.darkGrey,
         
-        height: 65,
+        height: 60,
         fontSize: 18,
     },
     btn:{

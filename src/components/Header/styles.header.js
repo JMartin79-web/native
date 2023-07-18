@@ -4,7 +4,7 @@ import { color } from "../../themes/colors/themes.colors";
 export const styles = StyleSheet.create({
     container:{
         zIndex: 10,
-        height: 100,
+        height: 75,
         flex: 1,
         position: "absolute",
         bottom: 0,
@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     },
     headerBackground:{
         zIndex: 11,
-        height: 70,
+        height: 60,
         width: "100%",
         position: "absolute",
         bottom: 0,
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     },
     header:{
         zIndex:12,
-        height: 70,
+        height: 60,
         width: "100%",
         paddingHorizontal: 15,
         

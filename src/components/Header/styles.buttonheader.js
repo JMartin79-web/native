@@ -5,19 +5,19 @@ export const styles = StyleSheet.create({
     btnHeader:{
         zIndex:15,
         
-        height:65,
-        width: 65,
-        marginHorizontal:15,
+        height:60,
+        width: 60,
+        marginHorizontal:10,
         borderRadius: 10,
-        
+        backgroundColor: color.darkGrey,
         alignItems: "center",
         justifyContent: "center",
 
     },
     btnHeaderFocus:{
         zIndex:15,
-        height:75,
-        width: 75,
+        height:60,
+        width: 60,
         borderRadius: 100,
         marginTop: -30,
         borderWidth: 5,

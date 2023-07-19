@@ -16,5 +16,6 @@ export const styles = StyleSheet.create({
         marginBottom:15
     },
     categoriesContainer:{
+        marginBottom: 60,
     }
 })

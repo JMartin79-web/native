@@ -12,8 +12,6 @@ export const styles = StyleSheet.create({
         flex:1,
         paddingBottom: -5,
         borderBottomWidth: 5,
-        //borderBottomColor: color.darkGrey,
-        
         height: 60,
         fontSize: 18,
     },
@@ -39,7 +37,7 @@ export const styles = StyleSheet.create({
 
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: color.pink,
+        backgroundColor: color.green,
     },
 
 })

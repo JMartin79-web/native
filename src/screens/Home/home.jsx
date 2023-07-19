@@ -19,7 +19,10 @@ import agridulce from "../../../assets/img/Categories/agridulce.jpg"
 // Data
 import CATEGORIES from "../../components/data/categories.json"
 
-export default function Home() {
+export default  Home = ({
+    onPress
+
+}) => {
 
     const [search, setSearch] = useState("")
     const [borderBottomColor, setBorderBottomColor] = useState(color.darkGrey);
@@ -62,10 +65,11 @@ export default function Home() {
           data={CATEGORIES}
           keyExtractor={(item) => item.id}
           style={styles.categoriesContainer}
-          contentContainerStyle={styles.category}
-          renderItem={({ item }) => 
-          <Categories title={item.name} imagen={item.source} />}
           showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.category}
+          renderItem={({ item }) =>  {
+            return <Categories title={item.name} imagen={destacada}/>
+        }}
         />
 
     </View>
@@ -73,6 +77,15 @@ export default function Home() {
 }
 
 /*
+
+renderItem={({ item }) =>
+            return <Categories
+            title={item.name}
+            imagen={item.source}
+            onPress={onPress}
+            />
+
+
 CATEGORIAS EN VIEW
 <View style={styles.categoriesContainer}>
             <Categories title="Destacados " source={destacada} />

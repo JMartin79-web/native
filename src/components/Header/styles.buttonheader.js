@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
         width: 60,
         marginHorizontal:10,
         borderRadius: 10,
-        backgroundColor: color.darkGrey,
         alignItems: "center",
         justifyContent: "center",
 
@@ -24,7 +23,7 @@ export const styles = StyleSheet.create({
         borderColor: color.white,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: color.pink,
+        backgroundColor: color.green,
         
     },
 })

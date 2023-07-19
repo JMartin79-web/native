@@ -7,7 +7,7 @@ import { FontAwesome } from '@expo/vector-icons';
 const Categories = ({
     onPress,
     title,
-    imagen
+    imagen,
 }) => {
     const arrow = <FontAwesome name="angle-right" size={35} color={color.white} />
     return(

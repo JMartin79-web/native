@@ -18,6 +18,7 @@ const search = ({
     onHandleFocus,
 
     onSearch,
+    onSearchDisable,
     onClose,
 }) => {
   return (
@@ -37,7 +38,7 @@ const search = ({
 
         <Pressable
         style={({pressed}) => [styles.btn, pressed && styles.btnPressed]}
-        onPress={onSearch}
+        onPress={value==="" ?onSearchDisable :onSearch}
         >
             <FontAwesome name="search" size={25} color={color.white} />
         </Pressable>

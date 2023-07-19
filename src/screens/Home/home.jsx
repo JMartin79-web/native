@@ -17,17 +17,31 @@ import salado from "../../../assets/img/Categories/salado.jpg"
 import agridulce from "../../../assets/img/Categories/agridulce.jpg"
 
 // Data
-import CATEGORIES from "../../components/data/categories.json"
+import CATEGORIES from "../../components/data/categories"
 
 export default  Home = ({
-    onPress
-
+    onPress,
 }) => {
 
     const [search, setSearch] = useState("")
     const [borderBottomColor, setBorderBottomColor] = useState(color.darkGrey);
 
     // Funciones para manejar el input
+    const onHandleSearch = () => {
+      console.warn("Buscando");
+      let text = search
+      setSearch("")
+    }
+
+    const onHandleSearchDisable = () => {
+      console.warn("No ingresaste nada");
+    }
+
+
+    const onHandleClose = () => {
+      setSearch("")
+    }
+
 
     // Manage text in the input
     const onHandlerChangeText = (text) => {setSearch(text);};
@@ -56,6 +70,9 @@ export default  Home = ({
             placeholderTextColor= {color.darkGrey}
             onHandleBlur={onHandlerBlur}
             onHandleFocus={onHandleFocus}
+            onSearch={onHandleSearch}
+            onSearchDisable={onHandleSearchDisable}
+            onClose={onHandleClose}
         />
 
         <Text style={styles.title}>Categorías</Text>
@@ -68,10 +85,9 @@ export default  Home = ({
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.category}
           renderItem={({ item }) =>  {
-            return <Categories title={item.name} imagen={destacada}/>
+            return <Categories title={item.name} imagen={item.source} onPress={onPress} />
         }}
         />
-
     </View>
   )
 }

@@ -2,10 +2,10 @@
     {
         "id": 1,
         "title": "Papas fritas",
-        "categoria": "salado",
-        "imagen": "#",
-        "destacado": false,
-        "pasos": [
+        "category": "salado",
+        "image": "#",
+        "featured": false,
+        "steps": [
             {
                 "title": "paso 1",
                 "description": "Lorem ipsum"
@@ -28,10 +28,10 @@
     {
         "id": 2,
         "title": "Pastel de papa",
-        "categoria": "salado",
-        "imagen": "#",
-        "destacado": false,
-        "pasos": [
+        "category": "salado",
+        "image": "#",
+        "featured": false,
+        "steps": [
             {
                 "title": "paso 1",
                 "description": "Lorem ipsum"
@@ -54,10 +54,10 @@
     {
         "id": 3,
         "title": "Pastafrola",
-        "categoria": "dulce",
-        "imagen": "#",
-        "destacado": false,
-        "pasos": [
+        "category": "dulce",
+        "image": "#",
+        "featured": false,
+        "steps": [
             {
                 "title": "paso 1",
                 "description": "Lorem ipsum"
@@ -80,10 +80,10 @@
     {
         "id": 4,
         "title": "Galletitas de avena",
-        "categoria": "dulce",
-        "destacado": false,
-        "imagen": "#",
-        "pasos": [
+        "category": "dulce",
+        "featured": false,
+        "image": "#",
+        "steps": [
             {
                 "title": "paso 1",
                 "description": "Lorem ipsum"
@@ -106,10 +106,10 @@
     {
         "id": 5,
         "title": "Pizza",
-        "categoria": "salado",
-        "imagen": "#",
-        "destacado": true,
-        "pasos": [
+        "category": "salado",
+        "image": "#",
+        "featured": true,
+        "steps": [
             {
                 "title": "paso 1",
                 "description": "Lorem ipsum"
@@ -132,10 +132,10 @@
     {
         "id": 6,
         "title": "Salsa agridulce",
-        "categoria": "agridulce",
-        "imagen": "#",
-        "destacado": false,
-        "pasos": [
+        "category": "agridulce",
+        "image": "#",
+        "featured": false,
+        "steps": [
             {
                 "title": "paso 1",
                 "description": "Lorem ipsum"

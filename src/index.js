@@ -16,7 +16,7 @@ export default function App(){
   const [isCategorySelected, setIsCategorySelected] = useState(false);
 
   //
-  const onHandleSelectCategory = (id) => {
+  const onHandleSelectCategory = ({categoryId}) => {
     setSelectedCategory(categoryId);
     console.warn(selectedCategory);
     setIsCategorySelected(!isCategorySelected);

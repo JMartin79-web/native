@@ -5,6 +5,7 @@ import { color } from "../../themes/colors/themes.colors.js"
 // Iconos
 import { FontAwesome } from '@expo/vector-icons'; 
 const Categories = ({
+    id,
     title,
     imagen,
     onSelectCategory

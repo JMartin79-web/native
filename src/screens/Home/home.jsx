@@ -16,8 +16,10 @@ import CATEGORIES from "../../components/data/categories"
 import logo from "../../../assets/img/logo/logo_color.png"
 
 export default  Home = ({
-    onSelectCategory,
+  onSelectCategory
 }) => {
+
+    const [category, setCategory] = useState(null)
 
     const [search, setSearch] = useState("")
     const [borderBottomColor, setBorderBottomColor] = useState(color.darkGrey);
@@ -50,7 +52,7 @@ export default  Home = ({
     };
 
     const onHandleId = (id) =>{
-      console.log(id);
+      setCategory(id);
     }
 
 
@@ -82,7 +84,7 @@ export default  Home = ({
             return<Categories
                     title={item.name}
                     imagen={item.source}
-                    onSelectCategory={id}
+                    onSelectCategory={() =>onSelectCategory({categoryId: item.id})}
                   />
           }}
           keyExtractor={(item) => item.id}

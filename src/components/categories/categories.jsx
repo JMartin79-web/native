@@ -8,13 +8,13 @@ const Categories = ({
     id,
     title,
     imagen,
-    onSelectCategory
+    onSelectedCategory
 }) => {
     const arrow = <FontAwesome name="angle-right" size={35} color={color.white} />
     return(
         <Pressable
             style={({pressed}) => [styles.category, pressed && styles.categoryPressed]}
-            onPress={() => onSelectCategory(id)}
+            onPress={() => onSelectedCategory(id)}
         >
             <Text style={styles.title} >{title}</Text>
             <View style={styles.imgContainer} >

@@ -8,7 +8,7 @@ import { color } from '../../themes/colors/themes.colors'
 //iconos
 import { FontAwesome } from '@expo/vector-icons'; 
 
-const search = ({
+const Search = ({
     value,
     placeholder,
     borderBottomColor,
@@ -54,4 +54,4 @@ const search = ({
   )
 }
 
-export default search
+export default Search

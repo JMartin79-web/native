@@ -16,9 +16,10 @@ export default function App(){
   const [isCategorySelected, setIsCategorySelected] = useState(false);
 
   //
-  const onHandleSelectCategory = ({categoryId}) => {
-    setSelectedCategory(categoryId);
-    console.warn(selectedCategory);
+  const onHandleSelectCategory = ({categoryName}) => {
+    console.log(categoryName);
+    
+    setSelectedCategory(categoryName);
     setIsCategorySelected(!isCategorySelected);
   };
 
@@ -32,7 +33,7 @@ return(
     <SafeAreaView style={styles.SafeArea}>
     <Header></Header>
       {isCategorySelected ? (
-            <Recepies onPress={onHandleNavigate} />
+            <Recepies onPress={onHandleNavigate} category={selectedCategory}/>
           ) : (
             <Home onSelectedCategory={onHandleSelectCategory} />
           )

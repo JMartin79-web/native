@@ -5,18 +5,17 @@ import { color } from "../../themes/colors/themes.colors.js"
 // Iconos
 import { FontAwesome } from '@expo/vector-icons'; 
 const Categories = ({
-    onPress,
     title,
     imagen,
+    onSelectCategory
 }) => {
     const arrow = <FontAwesome name="angle-right" size={35} color={color.white} />
     return(
         <Pressable
             style={({pressed}) => [styles.category, pressed && styles.categoryPressed]}
-            onPress={onPress}
+            onPress={() => onSelectCategory(id)}
         >
             <Text style={styles.title} >{title}</Text>
-
             <View style={styles.imgContainer} >
                 <ImageBackground
                 style={styles.img}

@@ -16,7 +16,7 @@ export default function App(){
   const [isCategorySelected, setIsCategorySelected] = useState(false);
 
   //
-  const onHandleSelectCategory = (categoryId) => {
+  const onHandleSelectCategory = (id) => {
     setSelectedCategory(categoryId);
     console.warn(selectedCategory);
     setIsCategorySelected(!isCategorySelected);
@@ -34,7 +34,7 @@ return(
       {isCategorySelected ? (
             <Recepies onPress={onHandleNavigate} />
           ) : (
-            <Home onPress={onHandleSelectCategory} />
+            <Home onSelectedCategory={onHandleSelectCategory} />
           )
       }
 

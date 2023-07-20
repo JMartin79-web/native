@@ -13,15 +13,19 @@ import Recepies from "./screens/Recepies/recepies";
 export default function App(){
    
   const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedCategoryName, setSelectedCategoryName] = useState(null)
   const [isCategorySelected, setIsCategorySelected] = useState(false);
 
   //
-  const onHandleSelectCategory = ({categoryName}) => {
-    console.log(categoryName);
-    
-    setSelectedCategory(categoryName);
+  const onHandleSelectCategory = ({categoryId}) => {
+    setSelectedCategory(categoryId);
     setIsCategorySelected(!isCategorySelected);
   };
+
+  const onHandleSelectCategoryName = ({categoryName}) => {
+    console.log(categoryName);
+    setSelectedCategoryName(categoryName)
+  }
 
   const onHandleNavigate = () => {
     setIsCategorySelected(!isCategorySelected);
@@ -33,9 +37,14 @@ return(
     <SafeAreaView style={styles.SafeArea}>
     <Header></Header>
       {isCategorySelected ? (
-            <Recepies onPress={onHandleNavigate} category={selectedCategory}/>
+            <Recepies
+            onPress={onHandleNavigate}
+            categoryId={selectedCategory}
+            categoryName={selectedCategoryName} />
           ) : (
-            <Home onSelectedCategory={onHandleSelectCategory} />
+            <Home
+            onSelectedCategory={onHandleSelectCategory}
+            onSelectedCategoryName={onHandleSelectCategoryName} />
           )
       }
 

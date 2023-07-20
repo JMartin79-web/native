@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { View, Text, Button, Pressable } from 'react-native'
+import { View, Text, Button, Pressable, FlatList } from 'react-native'
 
 // Estilos
 import { styles } from './stylesRecepies'
@@ -9,43 +9,76 @@ import { color } from '../../themes/colors/themes.colors'
 import { FontAwesome } from '@expo/vector-icons'; 
 
 // Components
-import Search from '../../components/search/search'
+import SimpleSearch from '../../components/search/simpleSearch';
 
+// Data
+import RECEPIES from "../../components/data/recepies.json"
 
 export default function Recepies({
-  onPress,
-  category,
-  categoryId
+  onPress, categoryId, categoryName
 }) {
 
+
+  const [filteredRecepies, setFilteredRecepies] = useState([])
   const [search, setSearch] = useState("")
   const [borderBottomColor, setBorderBottomColor] = useState(color.darkGrey);
 
 
     // Funciones para manejar el input
-    const onHandleSearch = () => {
-      console.warn("Buscando");
-      let text = search
-      setSearch("")
-    }
-    const onHandleSearchDisable = () => {
-      console.warn("No ingresaste nada");
-    }
     const onHandleClose = () => {
       setSearch("")
     }
 
-
     // Manage text in the input
-    const onHandlerChangeText = (text) => {setSearch(text);};
+    const onHandlerChangeText = (text) => {
+      setSearch(text)
+      filteredBySearch(text)
+    };
+
     // Manage on focus
     const onHandleFocus = () => {setBorderBottomColor(color.pink)};
     // Manage on blur
     const onHandlerBlur = () => {setBorderBottomColor(color.darkGrey)};
 
+    //FILTRADO DE RECETAS
+
+    const filteredRecepiesByCategory = RECEPIES.filter((recepy)=>{
+
+      // si son las destacadas
+      if(categoryId === 1){
+        if(recepy.featured){
+          return recepy
+        }
+      }
+      // Si son todas
+      else if(categoryId === 5){
+        return recepy
+
+      }
+      // Si son dulce-salado-agridulce
+      else {
+        if(recepy.categoryId === categoryId) {return recepy}
+      }
+      
+    })
+
+    //FILTRADO DE RECETAS POR SEARCH
+    const filteredBySearch = (query) =>{
+      let updatedRecepies = [...filteredRecepiesByCategory]
+
+      updatedRecepies = updatedRecepies.filter((recepy)=>{
+        return recepy.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
+      })
+
+      setFilteredRecepies(updatedRecepies)
+    }
+
+
 
   return (
-    <View style={styles.recepies} >
+    <View style={styles.container} >
+      
+      {/* BOTON VOLVER */}
       <Pressable style={styles.btnBack} onPress={onPress}>
         <FontAwesome
         name="angle-left"
@@ -54,8 +87,8 @@ export default function Recepies({
         <Text  style={styles.btnBackText}>Volver</Text>
       </Pressable>
 
-
-      <Search
+      {/* SEARCH INPUT */}
+      <SimpleSearch
       value={search}
       onHandlerChangeText={onHandlerChangeText}
       borderBottomColor={borderBottomColor}
@@ -65,12 +98,26 @@ export default function Recepies({
       placeholderTextColor= {color.darkGrey}
       onHandleBlur={onHandlerBlur}
       onHandleFocus={onHandleFocus}
-      onSearch={onHandleSearch}
-      onSearchDisable={onHandleSearchDisable}
       onClose={onHandleClose}
       />
-      
-      <Text style={styles.title}>{category}</Text>
+
+
+      {/* LISTA DE RECETAS */}
+      <View style={styles.recepiesContainer}>
+        <Text style={styles.title}> {categoryName} </Text>
+
+        <FlatList
+          data={search.length>0 ?filteredRecepies :filteredRecepiesByCategory}
+          style={styles.recepies}
+          contentContainerStyle={styles.recepy}
+          renderItem={({ item }) =>  {
+            return <Text> {item.title} </Text>
+          }}
+          keyExtractor={(item)=> item.id.toString()}
+          showsVerticalScrollIndicator={true}
+        />
+      </View>
+
     </View>
   )
 }

@@ -2,6 +2,7 @@
     {
         "id": 1,
         "title": "Papas fritas",
+        "categoryId": 3,
         "category": "salado",
         "image": "#",
         "featured": false,
@@ -28,6 +29,7 @@
     {
         "id": 2,
         "title": "Pastel de papa",
+        "categoryId": 3,
         "category": "salado",
         "image": "#",
         "featured": false,
@@ -54,6 +56,7 @@
     {
         "id": 3,
         "title": "Pastafrola",
+        "categoryId": 2,
         "category": "dulce",
         "image": "#",
         "featured": false,
@@ -80,6 +83,7 @@
     {
         "id": 4,
         "title": "Galletitas de avena",
+        "categoryId": 2,
         "category": "dulce",
         "featured": false,
         "image": "#",
@@ -106,6 +110,7 @@
     {
         "id": 5,
         "title": "Pizza",
+        "categoryId": 3,
         "category": "salado",
         "image": "#",
         "featured": true,
@@ -132,6 +137,7 @@
     {
         "id": 6,
         "title": "Salsa agridulce",
+        "categoryId": 4,
         "category": "agridulce",
         "image": "#",
         "featured": false,

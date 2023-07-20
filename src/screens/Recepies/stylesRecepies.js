@@ -2,7 +2,7 @@ import { StyleSheet} from "react-native";
 import { color } from "../../themes/colors/themes.colors";
 
 export const styles = StyleSheet.create({
-    recepies:{
+    container:{
         flex:1
     },
     btnBack:{
@@ -21,5 +21,19 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: "bold",
         marginBottom:15
-    }
+    },
+
+
+    // RECETAS
+    recepiesContainer:{
+        flex:1,
+        marginBottom: 60,
+        backgroundColor: color.aquamarine
+    },
+    recepies:{
+
+    },
+    recepy:{
+        backgroundColor: color.pink,
+    },
 })

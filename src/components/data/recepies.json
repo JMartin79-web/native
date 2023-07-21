@@ -1,9 +1,12 @@
 [
     {
         "id": 1,
+
         "title": "Papas fritas",
+        "description": "Lorem ipsum",
         "categoryId": 3,
         "category": "salado",
+        "tags": ["3 ingredientes, papa, snack"],
         "image": "#",
         "featured": false,
         "steps": [

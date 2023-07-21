@@ -10,13 +10,15 @@ import { color } from '../../themes/colors/themes.colors'
 
 // Iconos
 import { FontAwesome } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 const Header = () => {
 
-  const homeIcon =  <FontAwesome name="home" size={25} color={color.white} />
-  const likeIcon =  <FontAwesome name="heart" size={25} color={color.white} />
-  const listIcon =  <FontAwesome name="list" size={25} color={color.white} />
-  const userIcon =  <FontAwesome name="user" size={25} color={color.white} />
+  const homeIcon =  <MaterialCommunityIcons name="home" size={30} color={color.white} />
+  const likeIcon =  <MaterialCommunityIcons name="heart" size={30} color={color.white} />
+  const listIcon =  <MaterialCommunityIcons name="playlist-edit" size={30} color={color.white} />
+  const userIcon =  <MaterialCommunityIcons name="account" size={30} color={color.white} />
   const home= "home"
   const liked= "liked"
   const recipe= "recipe"

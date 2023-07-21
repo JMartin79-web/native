@@ -7,6 +7,8 @@ import { color } from '../../themes/colors/themes.colors'
 
 //iconos
 import { FontAwesome } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 const Search = ({
     value,
@@ -40,14 +42,14 @@ const Search = ({
         style={({pressed}) => [styles.btn, pressed && styles.btnPressed]}
         onPress={value==="" ?onSearchDisable :onSearch}
         >
-            <FontAwesome name="search" size={25} color={color.white} />
+            <MaterialCommunityIcons name="magnify" size={30} color={color.white} />
         </Pressable>
 
         <Pressable
         style={({pressed}) => [styles.btn, pressed && styles.btnPressed]}
         onPress={onClose}
         >
-            <FontAwesome name="close" size={25} color={color.white} />
+            <MaterialCommunityIcons name="close" size={30} color={color.white} />
         </Pressable>
 
     </View>

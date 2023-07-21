@@ -119,13 +119,14 @@ export default function Recepies({
           showsVerticalScrollIndicator={true}
         />
 
-        {filteredRecepies.length === 0 && (
+
+      {/* LISTA DE RECETAS */}
+      {filteredRecepies.length === 0 && (
           <View style={styles.viewNotFound}>
             <Text style={styles.viewNotFoundText}>No se encontraron recetas...</Text>
             <Image style={styles.viewNotFoundImg} resizeMode='contain' source={noFoodIcon}/>
-          </View>
-        ) 
-        }
+          </View>) 
+      }
 
       </View>
 

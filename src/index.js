@@ -1,17 +1,96 @@
 import { React, useState} from "react";
 import { styles } from "./Styles";
-
+import {useFonts, ususFont} from "expo-font"
 import {SafeAreaView, Text } from "react-native";
 
 import { color } from "./themes/themes";
+import { FONTS } from "./themes/fonts/themes.fonts";
 import { Header } from "./components/components";
+
+// NAVEGADOR
+import RootNavigator from "./components/navigations/navigation";
 
 // Paginas
 import Home from "./screens/Home/home";
 import Recepies from "./screens/Recepies/recepies";
+import Loader from "./screens/Loader/loader";
+
+export default function App(){
+      
+  const [loaded, error] = useFonts({
+    [FONTS.thin]:  require("../assets/fonts/Livvic-Thin.ttf"),
+    [FONTS.thinItalic]:require("../assets/fonts/Livvic-ThinItalic.ttf"),
+
+    [FONTS.extralight]:require("../assets/fonts/Livvic-ExtraLight.ttf"),
+    [FONTS.extralightItalic]:require("../assets/fonts/Livvic-ExtraLightItalic.ttf"),
+    
+    [FONTS.light]:require("../assets/fonts/Livvic-Light.ttf"),
+    [FONTS.lightItalic]:require("../assets/fonts/Livvic-LightItalic.ttf"),
+
+    [FONTS.medium]:require("../assets/fonts/Livvic-Medium.ttf"),
+    [FONTS.mediumItalic]:require("../assets/fonts/Livvic-MediumItalic.ttf"),
+
+    "livvic-regular":require("../assets/fonts/Livvic-Regular.ttf"),
+    [FONTS.italic]:require("../assets/fonts/Livvic-Italic.ttf"),
+    
+    [FONTS.semibold]:require("../assets/fonts/Livvic-SemiBold.ttf"),
+    [FONTS.semiboldItalic]:require("../assets/fonts/Livvic-SemiBoldItalic.ttf"),
+
+    [FONTS.bold]:require("../assets/fonts/Livvic-Bold.ttf"),
+    [FONTS.boldItalic]: require("../assets/fonts/Livvic-BoldItalic.ttf"),
+
+    [FONTS.black]:require("../assets/fonts/Livvic-Black.ttf"),
+    [FONTS.blackItalic]:require("../assets/fonts/Livvic-BlackItalic.ttf"),
+
+  })
+
+if(!loaded){ return(<Loader/>)}
+
+return(
+<>
+    <SafeAreaView style={styles.SafeArea}>
+      <Header></Header>
+      <RootNavigator/>
+    </SafeAreaView>
+    
+</>
+    )
+}
+
+
+
+
+/*
 
 export default function App(){
    
+  const [loaded, error] = useFonts({
+    [FONTS.thin]:  require("../assets/fonts/Livvic-Thin.ttf"),
+    [FONTS.thinItalic]:require("../assets/fonts/Livvic-ThinItalic.ttf"),
+
+    [FONTS.extralight]:require("../assets/fonts/Livvic-ExtraLight.ttf"),
+    [FONTS.extralightItalic]:require("../assets/fonts/Livvic-ExtraLightItalic.ttf"),
+    
+    [FONTS.light]:require("../assets/fonts/Livvic-Light.ttf"),
+    [FONTS.lightItalic]:require("../assets/fonts/Livvic-LightItalic.ttf"),
+
+    [FONTS.medium]:require("../assets/fonts/Livvic-Medium.ttf"),
+    [FONTS.mediumItalic]:require("../assets/fonts/Livvic-MediumItalic.ttf"),
+
+    "livvic-regular":require("../assets/fonts/Livvic-Regular.ttf"),
+    [FONTS.italic]:require("../assets/fonts/Livvic-Italic.ttf"),
+    
+    [FONTS.semibold]:require("../assets/fonts/Livvic-SemiBold.ttf"),
+    [FONTS.semiboldItalic]:require("../assets/fonts/Livvic-SemiBoldItalic.ttf"),
+
+    [FONTS.bold]:require("../assets/fonts/Livvic-Bold.ttf"),
+    [FONTS.boldItalic]: require("../assets/fonts/Livvic-BoldItalic.ttf"),
+
+    [FONTS.black]:require("../assets/fonts/Livvic-Black.ttf"),
+    [FONTS.blackItalic]:require("../assets/fonts/Livvic-BlackItalic.ttf"),
+
+  })
+
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [selectedCategoryName, setSelectedCategoryName] = useState(null)
   const [isCategorySelected, setIsCategorySelected] = useState(false);
@@ -31,9 +110,11 @@ export default function App(){
     setIsCategorySelected(!isCategorySelected);
     setSelectedCategory(null);
   };
+
+if(!loaded){ return(<Loader/>)}
+
 return(
 <>
-    
     <SafeAreaView style={styles.SafeArea}>
     <Header></Header>
       {isCategorySelected ? (
@@ -55,3 +136,5 @@ return(
 </>
     )
 }
+
+*/

@@ -16,8 +16,13 @@ import CATEGORIES from "../../components/data/categories"
 import logo from "../../../assets/img/logo/logo_color.png"
 
 export default  Home = ({
-  onSelectedCategory, onSelectedCategoryName
+  navigation, route,
+  
 }) => {
+
+    const onSelectedCategory = ({categoryId,categoryName}) =>{
+      navigation.navigate("recepies", {categoryId,categoryName})
+    }
 
     const [search, setSearch] = useState("")
     const [borderBottomColor, setBorderBottomColor] = useState(color.darkGrey);
@@ -79,8 +84,7 @@ export default  Home = ({
             return<Categories
                     title={item.name}
                     imagen={item.source}
-                    onSelectedCategory={() =>onSelectedCategory({categoryId: item.id})}
-                    onSelectedCategoryName={() =>onSelectedCategoryName({categoryName: item.category})}
+                    onSelectedCategory={() =>onSelectedCategory({categoryId: item.id,categoryName: item.category})}
                   />
           }}
           keyExtractor={(item) => item.id}

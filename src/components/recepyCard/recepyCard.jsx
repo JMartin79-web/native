@@ -1,15 +1,15 @@
-import { View, Text, Pressable, Image } from 'react-native'
+import { View, Text, Pressable, Image, FlatList } from 'react-native'
 import React from 'react'
 
 // Assets
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { color } from '../../themes/colors/themes.colors';
+import { styles } from './stylesRecepyCard';
 
-export default function recepyCard({
+export default function RecepyCard({
     id,
     title,
     description,
-
 
     category,
     categoryId,
@@ -17,25 +17,48 @@ export default function recepyCard({
     featured,
     tags,
     image,
+
+    onCardPress,
 }) {
+    tagsArray = [...tags]
+    //console.log(tagsArray)
+
   return (
-    <Pressable>
+    <Pressable
+    style={({pressed}) => [styles.recepyCard, pressed && styles.recepyCardPressed]}
+    onPress={onCardPress}
+    >
 
         {/* IMAGE */}
-        <View>
+        <View style={styles.imgContainer}>
         <Image
-            source={
-                image ?
-                image
-                : <MaterialCommunityIcons name="image-off" size={25} color={color.white} />}
+            style={styles.img}
+            resizeMode='cover'
+            source={image}
         />
+        <MaterialCommunityIcons name="image-off" size={50} color={color.white}/>
 
         </View>
         
         {/* TEXTO */}
-        <View>
+        <View style={styles.textContainer}>
+            <Text style={styles.title}>{title}</Text>
+            <Text 
+                ellipsizeMode='tail'
+                numberOfLines={2}
+                style={styles.description}>{description}
+            </Text>
 
+            <FlatList
+                data={tagsArray}
+                style={styles.tagsList}
+                contentContainerStyle={styles.tags}
+                renderItem={(tag)=>{
+                    <Text> {tag.item} </Text>
+                }}
+                keyExtractor={(item) => item.id}
 
+            />
         </View>
 
     </Pressable>

@@ -30,12 +30,7 @@ export const styles = StyleSheet.create({
         flex:1,
         marginBottom: 60,
     },
-    recepies:{
 
-    },
-    recepy:{
-        backgroundColor: color.pink,
-    },
 
     // No encotrado
     viewNotFound:{

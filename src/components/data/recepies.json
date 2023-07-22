@@ -1,12 +1,11 @@
 [
     {
         "id": 1,
-
         "title": "Papas fritas",
-        "description": "Lorem ipsum",
+        "description": "Son las papas que se preparan cortándose en forma de bastones y friéndolas en aceite caliente hasta que queden doradas, crujientes para luego retirarlas del aceite y luego sazonarlas con sal",
         "categoryId": 3,
         "category": "salado",
-        "tags": ["3 ingredientes, papa, snack"],
+        "tags": ["snack", "simple"],
         "image": "#",
         "featured": false,
         "steps": [
@@ -34,6 +33,7 @@
         "title": "Pastel de papa",
         "categoryId": 3,
         "category": "salado",
+        "tags": [],
         "image": "#",
         "featured": false,
         "steps": [
@@ -61,6 +61,7 @@
         "title": "Pastafrola",
         "categoryId": 2,
         "category": "dulce",
+        "tags": [],
         "image": "#",
         "featured": false,
         "steps": [
@@ -88,6 +89,7 @@
         "title": "Galletitas de avena",
         "categoryId": 2,
         "category": "dulce",
+        "tags": [],
         "featured": false,
         "image": "#",
         "steps": [
@@ -115,6 +117,7 @@
         "title": "Pizza",
         "categoryId": 3,
         "category": "salado",
+        "tags": [],
         "image": "#",
         "featured": true,
         "steps": [
@@ -142,6 +145,7 @@
         "title": "Salsa agridulce",
         "categoryId": 4,
         "category": "agridulce",
+        "tags": [],
         "image": "#",
         "featured": false,
         "steps": [

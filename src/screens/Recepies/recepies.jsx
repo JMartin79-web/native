@@ -11,14 +11,15 @@ import noFoodIcon from "../../../assets/img/recepies/noFoodIcon.png"
 
 // Components
 import SimpleSearch from '../../components/search/simpleSearch';
+import RecepyCard from '../../components/recepyCard/recepyCard';
 
 // Data
 import RECEPIES from "../../components/data/recepies.json"
 
 export default function Recepies({
-  onPress, categoryId, categoryName
+  navigation, route, 
 }) {
-
+  const {categoryId,categoryName} = route.params
 
   const [filteredRecepies, setFilteredRecepies] = useState([filteredRecepiesByCategory])
   const [search, setSearch] = useState("")
@@ -41,6 +42,13 @@ export default function Recepies({
     const onHandleFocus = () => {setBorderBottomColor(color.pink)};
     // Manage on blur
     const onHandlerBlur = () => {setBorderBottomColor(color.darkGrey)};
+
+
+    // Manage NAVIGATION TO RECEPYDETAIL
+    const onHandleCardPress = ({recepyId}) => {
+      navigation.navigate("recepies-detail", {recepyId})
+    }
+
 
     //FILTRADO DE RECETAS
 
@@ -81,7 +89,7 @@ export default function Recepies({
     <View style={styles.container} >
       
       {/* BOTON VOLVER */}
-      <Pressable style={styles.btnBack} onPress={onPress}>
+      <Pressable style={styles.btnBack} onPress={()=>navigation.navigate("home")}>
         <FontAwesome
         name="angle-left"
         size={35}
@@ -113,10 +121,16 @@ export default function Recepies({
           style={styles.recepies}
           contentContainerStyle={styles.recepy}
           renderItem={({ item }) =>  {
-            return <Text> {item.title} </Text>
+            return<RecepyCard
+                    title={item.title}  
+                    //image={item.image}
+                    description={item.description}
+                    onCardPress={()=> onHandleCardPress({recepyId:item.id})}
+                    tags={item.tags}
+                  />
           }}
           keyExtractor={(item)=> item.id.toString()}
-          showsVerticalScrollIndicator={true}
+          showsVerticalScrollIndicator={false}
         />
 
 

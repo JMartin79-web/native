@@ -49,7 +49,6 @@ if(!loaded){ return(<Loader/>)}
 return(
 <>
     <SafeAreaView style={styles.SafeArea}>
-      <Header></Header>
       <RootNavigator/>
     </SafeAreaView>
     

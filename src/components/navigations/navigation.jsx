@@ -1,10 +1,17 @@
 import { NavigationContainer } from "@react-navigation/native";
-import HomeNavigation from "./navigationHome";
+
+import HeaderNavigation from "./headerNavigation";
+
+// STYLES
+import { styles } from "./stylesNavigation";
 
 function RootNavigator(){
     return(
-        <NavigationContainer>
-            <HomeNavigation/>
+        <NavigationContainer
+        styles={styles.container}
+
+        >
+            <HeaderNavigation/>
         </NavigationContainer>
     )
 }

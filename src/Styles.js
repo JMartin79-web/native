@@ -6,4 +6,5 @@ export const styles = StyleSheet.create({
         paddingTop: StatusBar.currentHeight + 15,
         paddingHorizontal: 15,
     },
+
 })

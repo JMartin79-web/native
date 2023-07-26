@@ -1,23 +1,24 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // SCREENS
-import User from "../../screens/User/User";
+import Create from "../../screens/Create/Create";
+
 
 const Stack = createNativeStackNavigator()
 
 
-export default function UserNavigation(){
+export default function CreateNavigation(){
     return(
         <Stack.Navigator
-            initialRouteName="user"
+            initialRouteName="create"
             screenOptions={{
                 headerShown:false,
                 headerShadowVisible: false,
             }}
         >
             <Stack.Screen
-                name="user"
-                component={User}
+                name="create"
+                component={Create}
             />
 
         </Stack.Navigator>

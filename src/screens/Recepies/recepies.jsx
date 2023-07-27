@@ -14,11 +14,15 @@ import SimpleSearch from '../../components/search/simpleSearch';
 import RecepyCard from '../../components/recepyCard/recepyCard';
 
 // Data
-import RECEPIES from "../../components/data/recepies.json"
+import { useSelector } from 'react-redux';
 
 export default function Recepies({
   navigation, route, 
 }) {
+
+  const RECEPIES = useSelector((state)=> state.recepies.data)
+
+
   const {categoryId,categoryName} = route.params
 
   const [filteredRecepies, setFilteredRecepies] = useState([filteredRecepiesByCategory])

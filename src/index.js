@@ -1,11 +1,12 @@
 import { React, useState} from "react";
-import { styles } from "./Styles";
-import {useFonts, ususFont} from "expo-font"
+import {useFonts} from "expo-font"
 import {SafeAreaView, Text } from "react-native";
+import { Provider } from "react-redux";
 
+// STYLES
+import { styles } from "./Styles";
 import { color } from "./themes/themes";
 import { FONTS } from "./themes/fonts/themes.fonts";
-import { Header } from "./components/components";
 
 // NAVEGADOR
 import RootNavigator from "./components/navigations/navigation";
@@ -14,6 +15,7 @@ import RootNavigator from "./components/navigations/navigation";
 import Home from "./screens/Home/home";
 import Recepies from "./screens/Recepies/recepies";
 import Loader from "./screens/Loader/loader";
+import { store } from "./store/store";
 
 export default function App(){
       
@@ -48,9 +50,11 @@ if(!loaded){ return(<Loader/>)}
 
 return(
 <>
+  <Provider store={store}>
     <SafeAreaView style={styles.SafeArea}>
       <RootNavigator/>
     </SafeAreaView>
+  </Provider>
     
 </>
     )
